@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping Cart</title>
+</head>
+<body>
+
+  <h2>Simple Shopping Cart</h2>
+
+  <label>Enter Product Name:</label>
+  <input type="text" id="productName">
+
+  <button onclick="addProduct()">Add Product</button>
+
+  <p id="message"></p>
+
+  <h3>Cart Items</h3>
+  <ul id="cartList"></ul>
+
+  <p id="total">Total Products: 0</p>
+
+  <script>
+    let count = 0;
+
+    function addProduct() {
+      let product = document.getElementById("productName").value;
+
+      let listItem = document.createElement("li");
+      listItem.textContent = product;
+
+      document.getElementById("cartList").appendChild(listItem);
+
+      count++;
+
+      document.getElementById("message").textContent = product + " is added to the cart.";
+      document.getElementById("total").textContent = "Total Products: " + count;
+
+      document.getElementById("productName").value = "";
+    }
+  </script>
+
+</body>
+</html>
